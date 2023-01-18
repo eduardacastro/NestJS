@@ -9,11 +9,11 @@ import { v4 as uuid } from 'uuid';
 export class BrandsService {
 
   private brands: Brand[] = [
-    {
-      id: uuid(),
-      name: 'Toyota',
-      createdAt: new Date().getTime()
-    }
+    // {
+    //   id: uuid(),
+    //   name: 'Toyota',
+    //   createdAt: new Date().getTime()
+    // }
   ]
 
   create(createBrandDto: CreateBrandDto) {
@@ -60,5 +60,10 @@ export class BrandsService {
   remove(id: void) {
     this.brands = this.brands.filter(brand => brand.id !== id);
   }
+
+  fillCarsWithSeedData(brands: Brand[]){
+    this.brands = brands;
+  }
+
 }
 
